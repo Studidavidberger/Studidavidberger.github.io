@@ -1,0 +1,235 @@
+/*
+
+### elements de l'application
+# Page visiteurs
+accueil
+RGPD
+services - restauration, visite guide, visite petit train
+animaux - vue global, vue detaillé, et avis.
+habitats - vue global, vue detaillé.
+ecologies - le fonctionnement de nos energies.
+mini-jeu sur les animaux du zoo.
+
+# Pages membres Arcadia
+compte employés
+dashboard admin
+
+# Fonctionnalité
+Systeme de validation des avis
+Creer et modifier des comptes.
+application de recherche d'animaux par filtre
+Billeterie en ligne
+Plan du zoo.
+droit des membres du zoo de changer horaires, animaux, habitats, et services proposées.
+compteur de vues animaux
+Serveur de messagerie
+
+--------- infos
+
+# liens - 5
+depot Git
+Lien de l'application
+Gestion de projet
+Fichier readme déployer l'application en local
+Documentation du projet en PDF
+
+*/
+
+/* CSS GENERAL */
+* {
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box;*/
+    font-family: "p_defaut";
+    color: #e6e49f;
+    text-shadow: #000 1px 1px 10px;
+    cursor: url("/mouse_01.png"), auto;}
+a:hover img:hover {
+    cursor: url("/mouse_02.png"), auto;}
+html {
+    scroll-behavior: smooth;
+    background: black;
+    overflow: auto;}
+.h1 {
+    text-align: center;
+    padding: 3%;
+    font-size: 50px;}
+
+
+/* TEST */
+/*
+.test {
+    font-family: 'p_jeu', cursive;
+    position: sticky;
+    top: 80%;
+    z-index: 1;
+    font-size: 50px;
+}
+ */
+
+
+/* NAVBAR */
+.navbar {
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    background-color: #333;
+    padding: 8px;
+}
+.navbar_right {
+    align-items: center;
+    display: flex;
+}
+.navbar-brand {
+    color: white;
+    font-weight: bold;
+}
+
+
+/* LIENS ET BOUTONS */
+.hovrbl {filter: brightness(20%)}
+.hovrbl:hover {filter: brightness(100%)}
+
+
+/* HERO BANNER */
+.color_title {
+    background: linear-gradient(45deg, #989c94, #FFF0);
+    color: #e6e49f;
+}
+.cont_hero {
+    position: relative;
+    text-align: center;
+    z-index: 0;
+}
+.hero_h1h2 {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 2%;
+}
+.hero_p {
+    position: absolute;
+    bottom: 0px;
+    padding: 16px;
+}
+.hero_bg {
+    object-fit: cover;
+    width: 100%;
+}
+
+
+/* GAME */
+.game_cont {
+    display: inline-block;
+    font-size: 12px;
+    font-family: "p_jeu";
+    position: absolute;
+    bottom: 0px;
+    right: 16px;
+}
+.game {
+    display: none;
+    font-family: 'p_jeu', cursive;
+    position: sticky;
+    top: 80%;
+    z-index: 1;
+    background-color: #222;
+    width: 50%;
+    text-align: center;
+    padding: 16px;
+    border-radius: 10px;
+    border: 2px white solid;
+}
+
+
+/* SECTIONS */
+.section1 {
+    text-align: left;
+    background-color: #989c94;
+}
+.section2 {
+    text-align: left;
+    background-color: #e3e7d3;
+}
+
+
+/* TAILLE D'ELEMENT */
+.s128 {width: 128px}
+.s64 {width: 64px}
+.s32 {width: 32px}
+.s24 {width: 24px}
+
+
+/* Palette CSS ARCADIA */
+.palette {display: flex}
+.p_e3e7d3 {background-color: #e3e7d3 /* BLANC  */}
+.p_989c94 {background-color: #989c94 /* GRIS   */}
+.p_e6e49f {background-color: #e6e49f /* JAUNE  */}
+.p_80bf6d {background-color: #80bf6d /* VERT   */}
+
+
+/* POLICE D'ECRITURE */
+.fs64 {font-size: 64px}
+.fs32 {font-size: 32px}
+@font-face {
+    font-family: p_defaut;
+    src: url("/p_defaut.ttf");
+}
+@font-face {
+    font-family: p_jeu;
+    src: url("/p_jeu.ttf");
+}
+
+
+/* Mobile Version Media query CSS3 */
+@media screen and (max-width: 600px) {
+    .bg {
+        height: 20rem;
+    }
+    .fs32 {
+        font-size: 12px;
+    }
+    .fs64 {
+        font-size: 20px;
+    }
+    .hero_p {
+        display: none;
+    }
+    .s64 {
+        width: 32px;
+    }
+}
+@media screen and (min-width: 600px) {
+    .bg {
+        height: 25rem;
+    }
+    .fs32 {
+        font-size: 20px;
+    }
+    .fs64 {
+        font-size: 32px;
+    }
+    .hero_p {
+        display: none;
+    }
+    .s64 {
+        width: 48px;
+    }
+}
+@media screen and (min-width: 1023px) {
+    .bg {
+        height: 50rem;
+    }
+    .fs32 {
+        font-size: 32px;
+    }
+    .fs64 {
+        font-size: 64px;
+    }
+    .hero_p {
+        display: flex;
+    }
+    .s64 {
+        width: 64px;
+    }
+}
