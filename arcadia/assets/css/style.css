@@ -35,7 +35,7 @@ Documentation du projet en PDF
 
 */
 
-/* CSS GENERAL */
+/* PROPRIÉTÉS GENERALES */
 * {
     padding: 0;
     margin: 0;
@@ -43,18 +43,22 @@ Documentation du projet en PDF
     font-family: "p_defaut";
     color: #e6e49f;
     text-shadow: #000 1px 1px 10px;
-    cursor: url("/mouse_01.png"), auto;}
+    cursor: url("../../mouse_01.png"), auto;
+}
 a:hover img:hover {
-    cursor: url("/mouse_02.png"), auto;}
+    cursor: url("../../mouse_02.png"), auto;
+}
 html {
     scroll-behavior: smooth;
     background: black;
     overflow: auto;}
 .h1 {
-    text-align: center;
-    padding: 3%;
-    font-size: 50px;}
-
+    padding: 3% 1%;
+    font-size: 46px;
+}
+.degrad {
+    background: linear-gradient(45deg, #989c94, #FFF0);
+}
 
 /* TEST */
 /*
@@ -73,8 +77,8 @@ html {
     justify-content: space-between;
     flex-direction: row;
     display: flex;
-    background-color: #333;
-    padding: 8px;
+    background-color: #9aa082;
+    background: linear-gradient(45deg, #989c94, #FFF0);
 }
 .navbar_right {
     align-items: center;
@@ -85,6 +89,50 @@ html {
     font-weight: bold;
 }
 
+@keyframes anim-burger {
+    from {
+        rotate: 0deg;
+    }
+    to {
+        rotate: 720deg;
+    }
+}
+.anim-burger:hover {
+    animation-name: anim-burger;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes anim-cat {
+    from {
+        transform: translate(-500px);
+    }
+    to {
+        transform: translate(500px);
+    }
+}
+.anim-cat {
+    animation-name: anim-cat;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+.cat:hover .cat-txt {display: block;}
+
+.cat-txt {
+    display: none;
+    background: white;
+    padding: 0%;
+    border: solid 5px red;
+    margin: -4rem;
+    color: black;
+    text-shadow: none;
+    font-size: 3rem;
+    left: 9rem;
+    position: absolute;
+    width: 25rem;
+    font-family: "p_jeu", auto;
+}
 
 /* LIENS ET BOUTONS */
 .hovrbl {filter: brightness(20%)}
@@ -92,10 +140,6 @@ html {
 
 
 /* HERO BANNER */
-.color_title {
-    background: linear-gradient(45deg, #989c94, #FFF0);
-    color: #e6e49f;
-}
 .cont_hero {
     position: relative;
     text-align: center;
@@ -111,21 +155,56 @@ html {
     position: absolute;
     bottom: 0px;
     padding: 16px;
+    text-align: left;
+    max-width: 500px;
 }
 .hero_bg {
     object-fit: cover;
     width: 100%;
 }
 
+/* settings */
+.set-container {
+    position: relative;
+    display: inline-block;
+}
+
+.set-cont {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #f1f1f1;
+    box-shadow: 0px 0px 10px 3px black;
+    top: -25rem;
+    padding: 21%;
+    gap: 20px;
+    z-index: 1;
+}
+
+.set-btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    cursor: url("../../mouse_02.png"), auto;
+}
+
+.set-cont a:hover {background-color: #ddd;}
+.set-container:hover .set-cont {display: flex;}
+
+
+
 
 /* GAME */
 .game_cont {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
-    font-family: "p_jeu";
     position: absolute;
-    bottom: 0px;
-    right: 16px;
+    bottom: 100px;
+    right: 50px;
 }
 .game {
     display: none;
@@ -141,19 +220,55 @@ html {
     border: 2px white solid;
 }
 
+.question1 {
+    text-align: center;
+    align-items: center;
+    display: block;
+    position: absolute;
+    top: 35%;
+    left: 10%;
+}
+
+.set-container:hover .set-cont {display: flex;}
+.game_cont:hover .question1 {display: none;}
 
 /* SECTIONS */
 .section1 {
     text-align: left;
-    background-color: #989c94;
+    background-color: #25291c;
 }
 .section2 {
     text-align: left;
-    background-color: #e3e7d3;
+    background-color: #918a74;
+}
+
+/* AVIS */
+.avis {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    width: 25%;
+    border: solid 2px white;
+    box-shadow: 10px 10px 20px 10px black;
+    background-color: #5e4524;
+}
+
+.avis-cont2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
 }
 
 
 /* TAILLE D'ELEMENT */
+.s50p {width: 50%}
+.s25p {width: 25%}
+.s15p {width: 15%}
+.s10p {width: 10%}
+.s5p {width: 5%}
+.s512 {width: 512px}
+.s256 {width: 256px}
 .s128 {width: 128px}
 .s64 {width: 64px}
 .s32 {width: 32px}
@@ -173,13 +288,18 @@ html {
 .fs32 {font-size: 32px}
 @font-face {
     font-family: p_defaut;
-    src: url("/p_defaut.ttf");
+    src: url("../../p_defaut.ttf");
 }
 @font-face {
     font-family: p_jeu;
-    src: url("/p_jeu.ttf");
+    src: url("../../p_jeu.ttf");
 }
-
+.f_jeu {
+    font-family: "p_jeu", auto;
+}
+.f_defaut {
+    font-family: "p_defaut", auto;
+}
 
 /* Mobile Version Media query CSS3 */
 @media screen and (max-width: 600px) {
@@ -192,11 +312,27 @@ html {
     .fs64 {
         font-size: 20px;
     }
-    .hero_p {
-        display: none;
-    }
     .s64 {
         width: 32px;
+    }
+    .hero_p {
+        display: flex;
+        position: absolute;
+        bottom: 0px;
+        padding: 16px;
+        text-align: left;
+        max-width: 500px;
+    }
+    .set-cont {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f1f1f1;
+        box-shadow: 0px 0px 10px 3px black;
+        top: -25rem;
+        padding: 21%;
+        gap: 20px;
+        z-index: 1;
     }
 }
 @media screen and (min-width: 600px) {
@@ -209,11 +345,20 @@ html {
     .fs64 {
         font-size: 32px;
     }
-    .hero_p {
-        display: none;
-    }
     .s64 {
         width: 48px;
+    }
+    .set-cont {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f1f1f1;
+        box-shadow: 0px 0px 10px 3px black;
+        top: -21rem;
+        padding: 22%;
+        gap: 40px;
+        z-index: 1;
+        left: 1rem;
     }
 }
 @media screen and (min-width: 1023px) {
@@ -231,5 +376,16 @@ html {
     }
     .s64 {
         width: 64px;
+    }
+    .set-cont {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        background-color: #f1f1f1;
+        box-shadow: 0px 0px 10px 3px black;
+        top: -26rem;
+        padding: 21%;
+        gap: 20px;
+        z-index: 1;
     }
 }
