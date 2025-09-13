@@ -258,10 +258,12 @@ html {
     display: flex;
     flex-direction: column;
     padding: 4px;
-    width: 75%;
+    margin: 40px;
+    width: 40%;
     border: solid 2px saddlebrown;
     box-shadow: 10px 10px 20px 10px black;
     background-color: #5e4524;
+    opacity: .8;
 }
 
 .avis-r {
@@ -270,12 +272,20 @@ html {
     display: flex;
     flex-direction: column;
     padding: 4px;
-    width: 75%;
+    width: 50%;
     border: solid 2px white;
     box-shadow: 10px 10px 20px 10px black;
-    background-color: #5e4524;
+    background-color: #266117;
+    opacity: .8;
 }
 
+.avis-title {
+    padding: 4px 8px;
+    width: 100%;
+    text-align: center;
+    background-color: #262626;
+    border: solid 2px white;
+}
 .avis-conteneur {
     padding: 2rem;
     width: 50%;
@@ -283,6 +293,12 @@ html {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    background-image: url("../img/habitat_02.jpg") ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.avis-date {
+    font-size: 12px;
 }
 .cont-nos-animaux {
     display: flex;
@@ -293,6 +309,15 @@ html {
     padding: .2rem;
 }
 
+/* SERVICES */
+
+/* ECO */
+.eco-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* TAILLE D'ELEMENT */
 .s50p {width: 50%}
