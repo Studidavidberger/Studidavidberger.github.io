@@ -144,6 +144,7 @@ html {
     position: relative;
     text-align: center;
     z-index: 0;
+    min-height: 30rem;
 }
 .hero_h1h2 {
     position: absolute;
@@ -163,30 +164,44 @@ html {
     width: 100%;
 }
 
-/* settings */
+/* LANGUES */
 .lang-container {
     position: relative;
     display: inline-block;
 }
-
-.lang-cont {
+.lang {
     display: flex;
     flex-direction: column;
     position: absolute;
     background-color: #e5ff9c;
     box-shadow: 0px 0px 10px 3px black;
-    top: -15rem;
-    left: 4rem;
+    top: -13rem;
+    left: 3rem;
     padding: 10%;
-    gap: 5px;
+    font-size: 1rem;
 }
-
-.set-btn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 8px;
-    font-size: 16px;
-    cursor: url("../../mouse_02.png"), auto;
+.lang-sel a {
+    font-size: 32px;
+}
+.lang-sel {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.lang-sel:hover .lang-cursor {
+    display: flex;
+    font-size: 64px;
+}
+.lang-cursor {
+    display: none;
+    position: absolute;
+    left: -3rem;
+    color: red;
+}
+.lang-cursor-valid {
+    display: flex;
+    color: green;
+    font-size: 64px;
 }
 
 
@@ -196,8 +211,8 @@ html {
     flex-direction: column;
     font-size: 12px;
     position: absolute;
-    bottom: 8px;
-    right: 8px;
+    bottom: 1rem;
+    right: 1rem;
 }
 .game {
     display: none;
@@ -228,28 +243,38 @@ html {
 .game_cont:hover .question1 {display: none;}
 
 
-/* GALLERY */
-.gal-container {
+/* ANIMAUX */
+.animain {
+    display: flex;
+    flex-direction: row;
+}
+.gal-disp {
+    border-right: solid 8px #492f10;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    background-image: url("/assets/img/habi/habi_8.jpg");
+    background-repeat: repeat;
+    background-position: left;
+}
+.gal-grid {
+    gap: 2rem;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    width: 50%;
 }
 .gal-cont {
     text-align: center;
-    padding: 2%;
-    border-right: solid 5px #04AA6D;
+    border-bottom: 3px solid #492f10;
+}
+.gal-cont p {
+    font-size: 150%;
+}
+.gal-title {
+    text-align: center;
+    background-color: #262626;
+    border: solid 2px white;
 }
 
-
-/* SECTIONS */
-.section1 {
-    text-align: left;
-    background-color: #25291c;
-}
-.section2 {
-    text-align: left;
-    background-color: #918a74;
-}
 
 /* AVIS */
 .avis {
@@ -258,66 +283,98 @@ html {
     display: flex;
     flex-direction: column;
     padding: 4px;
-    margin: 40px;
-    width: 40%;
-    border: solid 2px saddlebrown;
+    margin: 20px;
+    width: 60%;
+    border: solid 2px;
     box-shadow: 10px 10px 20px 10px black;
-    background-color: #5e4524;
+    background-color: #492f10;
     opacity: .8;
 }
-
 .avis-r {
     position: relative;
     left: -5rem;
     display: flex;
     flex-direction: column;
     padding: 4px;
-    width: 50%;
+    width: 60%;
     border: solid 2px white;
     box-shadow: 10px 10px 20px 10px black;
     background-color: #266117;
     opacity: .8;
 }
-
 .avis-title {
-    padding: 4px 8px;
     width: 100%;
     text-align: center;
     background-color: #262626;
     border: solid 2px white;
 }
 .avis-conteneur {
-    padding: 2rem;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background-image: url("../img/habitat_02.jpg") ;
-    background-repeat: no-repeat;
+    background-image: url("/assets/img/anim/anim_11.png");
+    background-repeat: repeat;
     background-position: center;
 }
 .avis-date {
     font-size: 12px;
-}
-.cont-nos-animaux {
-    display: flex;
-    flex-direction: row;
 }
 .pseudo {
     display: flex;
     padding: .2rem;
 }
 
-/* SERVICES */
 
-/* ECO */
-.eco-container {
+/* SERVICES */
+.serv-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: solid 15px black;
+    width: 74%;
+    text-align: center;
+}
+.serv-container img {
+    height: 128px;
+    padding: 10px;
+}
+.serv-container a {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #262626;
+    opacity: .5;
+    text-decoration: none;
+    padding: 2rem;
+}
+.serv-pos1 {
     align-items: center;
 }
+.serv-pos2 {
+    align-items: end;
+}
+.serv-box {
+    display: flex;
+    padding: 5rem;
+    border: solid 15px greenyellow;
+}
+.serv-container a:hover {
+    opacity: 1;
+    padding: 0 5rem;
+    color: red;
+    border: solid 5px red;
+}
+.serv-fs16 {font-size: 16px}
+.serv-fs20 {font-size: 20px}
+.serv-fs64 {font-size: 64px}
+.serv-fs32 {font-size: 32px}
+.serv-fs64 {font-size: 64px}
+
+/* ECO */
+
+
 
 /* TAILLE D'ELEMENT */
 .s50p {width: 50%}
@@ -333,19 +390,20 @@ html {
 .s24 {width: 24px}
 
 
-/* Palette CSS ARCADIA */
-.palette {display: flex}
-.p_e3e7d3 {background-color: #e3e7d3 /* BLANC  */}
-.p_989c94 {background-color: #989c94 /* GRIS   */}
-.p_e6e49f {background-color: #e6e49f /* JAUNE  */}
-.p_80bf6d {background-color: #80bf6d /* VERT   */}
+/* SECTIONS */
+.section1 {
+    text-align: left;
+    background-color: #3a6516;
+    border: solid 4px #492f10;
+}
+.section2 {
+    text-align: left;
+    background-color: #492f10;
+    border: solid 4px #3a6516;
+}
 
 
 /* POLICE D'ECRITURE */
-.fs16 {font-size: 16px}
-.fs20 {font-size: 20px}
-.fs64 {font-size: 64px}
-.fs32 {font-size: 32px}
 @font-face {
     font-family: p_defaut;
     src: url("../../p_defaut.ttf");
@@ -390,23 +448,26 @@ html {
     .game_img {
         width: 64px;
     }
-    .lang-cont {
+    .lang {
         display: flex;
         flex-direction: column;
         position: absolute;
         background-color: #e5ff9c;
         box-shadow: 0px 0px 10px 3px black;
-        top: -8rem;
-        left: 2rem;
+        top: -7rem;
+        left: 1rem;
         padding: 10%;
-        gap: 10px;
+        font-size: 12px;
+    }
+    .lang-sel a {
+        font-size: 20px;
     }
     .game_cont {
         display: flex;
         flex-direction: column;
         font-size: 12px;
         position: absolute;
-        bottom: 100px;
-        right: 8px;
+        bottom: 7rem;
+        right: 1rem;
     }
 }
