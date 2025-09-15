@@ -146,7 +146,8 @@ html {
     z-index: 0;
     min-height: 30rem;
 }
-.hero_h1h2 {
+.title {
+    font-size: 28px;
     position: absolute;
     top: 0px;
     width: 90%;
@@ -328,53 +329,136 @@ html {
 
 
 /* SERVICES */
-.serv-container {
+.serv-cont {
+    padding: 8% 1% 5%;
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
-    border: solid 15px black;
-    width: 74%;
-    text-align: center;
+    background-image: url("/assets/img/habi/habi_6.jpg");
+    background-repeat: repeat;
+    background-position: left bottom;
+    min-height: 30rem;
 }
-.serv-container img {
-    height: 128px;
-    padding: 10px;
-}
-.serv-container a {
+.serv-cont img {
     display: flex;
+    border: solid 2px white;
+    border-radius: 88px 0;
+    height: 5rem;
+    width: 450px;
+    object-fit: cover;
+}
+.serv-left {
+    width: 50%;
+}
+.serv-left div {
+    position: relative;
+    left: -15rem;
+}
+.serv-left div a p {
+    position: relative;
     flex-direction: column;
-    flex-wrap: wrap;
-    background-color: #262626;
-    opacity: .5;
-    text-decoration: none;
-    padding: 2rem;
-}
-.serv-pos1 {
-    align-items: center;
-}
-.serv-pos2 {
+    padding-top: 10px;
+    width: 450px;
+    display: flex;
     align-items: end;
 }
-.serv-box {
+.serv-cont img:hover {
+    border: solid 2px red;
+}
+.serv-cont .serv-anim-left:hover {
+    animation: serv-anim-left .5s ;
+    animation-fill-mode: forwards;
+}
+@keyframes serv-anim-left {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(150px);
+    }
+}
+
+.serv-right div {
+    position: relative;
+    left: 60%;
+}
+.serv-right div a p {
+    position: relative;
+    flex-direction: column;
+    padding-top: 10px;
+    width: 350px;
     display: flex;
-    padding: 5rem;
-    border: solid 15px greenyellow;
+    align-items: start;
+    left: 5rem;
 }
-.serv-container a:hover {
-    opacity: 1;
-    padding: 0 5rem;
-    color: red;
-    border: solid 5px red;
+.serv-right {
+    width: 50%;
 }
-.serv-fs16 {font-size: 16px}
-.serv-fs20 {font-size: 20px}
-.serv-fs64 {font-size: 64px}
-.serv-fs32 {font-size: 32px}
-.serv-fs64 {font-size: 64px}
+.serv-cont .serv-anim-right:hover {
+    animation: serv-anim-right .5s ;
+    animation-fill-mode: forwards;
+}
+@keyframes serv-anim-right {
+    from {
+        transform: translate(0);
+    }
+    to {
+        transform: translate(-150px);
+    }
+}
+
+
 
 /* ECO */
+.eco-cont {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-image: url("/assets/img/habi/habi_6.jpg");
+}
+.eco-ban {
+    font-size: 48px ;
+    padding: 3% 1%;
+}
+.eco-t1 {
+    left: 10%;
+}
+.eco-t2 {
+    left: 20%;
+}
+.eco-t3 {
+    left: 30%;
+}
+.eco-t4 {
+    left: 40%;
+    display: none;
+}
+.eco-btn {
+    text-align: center;
+    padding: 3%;
+}
+.eco-titles div {
+    padding: 3%;
+    font-size: 28px;
+    position: relative;
+}
+.eco-btn:focus .eco-t4 {
+    display: block;
+}
 
-
+/* FOTER */
+.foo-cont {
+    background: #222222;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    padding: 5% 0 2% 0;
+}
+.foo-ico {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
 
 /* TAILLE D'ELEMENT */
 .s50p {width: 50%}
@@ -388,20 +472,6 @@ html {
 .s64 {width: 64px}
 .s32 {width: 32px}
 .s24 {width: 24px}
-
-
-/* SECTIONS */
-.section1 {
-    text-align: left;
-    background-color: #3a6516;
-    border: solid 4px #492f10;
-}
-.section2 {
-    text-align: left;
-    background-color: #492f10;
-    border: solid 4px #3a6516;
-}
-
 
 /* POLICE D'ECRITURE */
 @font-face {
@@ -471,3 +541,6 @@ html {
         right: 1rem;
     }
 }
+
+
+
